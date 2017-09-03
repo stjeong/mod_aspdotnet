@@ -91,7 +91,7 @@
     </Link>
     <PostBuildEvent>
       <Message>Signing .dll and Exporting .tlb</Message>
-      <Command>REM sn -Ra "$(OutDir)Apache.Web.dll" "$(ProjectDir)\Apache.Web.snk"
+      <Command>sn -Ra "$(OutDir)Apache.Web.dll" "$(ProjectDir)\Apache.Web.snk"
 tlbexp /nologo /out:"$(OutDir)Apache.Web.tlb" "$(OutDir)Apache.Web.dll"
 </Command>
     </PostBuildEvent>
@@ -152,6 +152,9 @@ tlbexp /nologo /out:"$(OutDir)Apache.Web.tlb" "$(OutDir)Apache.Web.dll"
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Apache.Web.snk" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

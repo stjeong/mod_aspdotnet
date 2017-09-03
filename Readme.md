@@ -30,6 +30,11 @@ For mod_aspdotnet.so, just copy to Apache modules folder.
 At last step, you have to append configuration to your Apache httpd.conf. (Note that it is changed from mod_aspdotnet 2.2)
 
 ```
+
+LoadModule aspdotnet_module modules/mod_aspdotnet.so
+AddHandler asp.net asax ascx ashx asmx aspx axd config cs csproj licx rem resources resx soap vb vbproj vsdisco webinfo
+
+
 <IfModule mod_aspdotnet.cpp>
     AspNetMount /aspdocs "c:/temp/xampp/aspdocs"
     Alias /aspdocs "c:/temp/xampp/aspdocs"

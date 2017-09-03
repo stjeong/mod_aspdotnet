@@ -50,4 +50,7 @@
   <ItemGroup>
     <Text Include="ReadMe.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Apache.Web.snk" />
+  </ItemGroup>
 </Project>

@@ -21,9 +21,7 @@ bld/
 [Bb]in/
 [Oo]bj/
 [Ll]og/
-[temp]/
-[Debug24]/
-[Release24]/
+
 
 # Visual Studio 2015 cache/options directory
 .vs/
@@ -262,3 +260,6 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+/Release24
+/temp
+/Debug24
