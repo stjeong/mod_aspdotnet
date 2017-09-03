@@ -1,0 +1,62 @@
+Sourceforge mod-aspdotnet Project Status:                     -*-text-*-
+Last modified at [$Date: 2004/10/30 01:00:00 $]
+
+Release:
+
+    2.0.0.2006   : released 13 Nov 2006
+    2.0.0.2004   : not released
+    2.0.0.2002   : not released 
+    2.0.0.2000   : released 20 Nov 2004 
+                   (as the ASF mod_aspdotnet httpd subproject)
+
+    [Note that 2.x subversion distinguishes between Apache 2.0 and 2.2,
+     so a module 2.2.0.2004 corresponds to Apache httpd binary 2.2.x]
+
+
+PROJECT NOTICE:
+
+  The Apache HTTP Project has retired mod_aspdotnet, and wrowe, with 
+  his employer, Covalent Technologies, have reassumed the care and
+  feeding of the module at http://sourceforge.net/projects/mod-aspdotnet
+
+  The mod-aspdotnet sourceforge project follows the same essential flow
+  and project policies as observed by the Apache HTTP Server Project.
+  New contributors are welcomed under the same meritocracy structure.
+
+
+IMPORTANT NOTICE:
+
+  Build 2006 is likely to be the end-of-the-line for compiling within the
+  Visual Studio 2002 (.NET), as Microsoft has substantially changed the
+  Visual C++.NET language itself.  The module maintainers and contributors
+  are shifting energies to compatibility with the Visual Studio 2005 C++
+  language grammer, which disambiguates pointers from references amoung
+  many other prefereable changes.  The next version should continue 
+  to load .NET 1.0 or 1.1 hosted applications, we hope.
+
+
+RELEASE SHOWSTOPPERS:
+
+
+
+CURRENT RELEASE NOTES:
+
+    * May fail to run on WIN9x (98, ME).  WINNT (2k, XP, 2003) is required
+      by the ApplicationHost.CreateApplicationHost method, see .NET docs
+      and http://issues.apache.org/bugzilla/show_bug.cgi?id=32863
+      [Users report some success on 98/ME, but the module maintainers will
+      continue to deliberately ignore this and leave it to users to determine
+      if it's possible in their specific case.]
+
+    * May not recover gracefully after a System.Web.Host is lost, see
+      http://issues.apache.org/bugzilla/show_bug.cgi?id=32658 for discussion.
+
+    * Supports both Apache 2.0.x or 2.2.x (use Release 2.2/Debug 2.2
+      project configurations with the APACHE22_PATH environment variable
+      pointing at the installed Apache 2.2 root)
+
+    * Supports Microsoft's ASP.NET / .NET Runtime v2.0
+
+
+CURRENT VOTES:
+

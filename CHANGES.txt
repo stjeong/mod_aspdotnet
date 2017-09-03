@@ -1,0 +1,71 @@
+Changes to mod_aspdotnet SourceForge build 2199
+
+  Replaced the use of regasm and gacutil with tlbexp due to Windows 2008
+  UAC restrictions on end users/developers.  Confirmed to build for 2008
+  under Visual Studio 2008 (version 9.0) and .NET 2.0, and also confirmed
+  compatible with x86_64 bit builds of Apache 2.2 (requires a 64 bit
+  installation of .NET to be installed and activated).
+
+  MAJOR: Update solution files and C++.NET source syntax to Visual 
+  Studio 2005 (version 8.0), and .NET 2.0.
+
+Changes to mod-aspdotnet SourceForge project build 2006
+
+  Rebrand the project to SourceForge sponsored by Covalent, from the
+  ASF branding (no longer an ASF effort, due to the small number of
+  active module developers.)
+
+Changes to Apache mod_aspdotnet build 2004
+
+  MAJOR: Changed the preferred thread model to COINIT_MULTITHREADED, only
+  falling back on STA CoInitialize() if the original CoInitializeEx fails.
+  [Heino R. Pull <heino federated.com>]
+
+Changes to Apache mod_aspdotnet build 2002
+
+  Corrected Request::GetProtocol() to return "HTTPS" for SSL requests.
+  [Will Rowe]
+
+  Fixed error logging (including debug) behavior; pass the server context
+  (rather than NULL) to ap_log_error.  [Will Rowe]
+
+  Add AspNetVersion directive to load a specific .NET Framework version.
+  [Will Rowe]
+
+  Correct case-sensitivity to request and response headers.  Lower case
+  and other less-common header formats will now be recognized as members
+  of the ASP.NET defined set of http headers.  Fixes bug 32902 and fixes
+  compliance to RFC 2616.  [Will Rowe]
+
+  Apache.Web.dll is NOT Windows 98/ME compatible.  Enabled mod_aspdotnet
+  for non-Unicode Windows to permit developers to work twords a solution.
+  Partially addresses bug 32863.  [Will Rowe]
+
+  Modify mod_aspdotnet to build under Apache 2.1-dev; fixed brigade
+  processing for both httpd-2.0 and httpd-2.1-dev.  Added targets to
+  build against 2.1/2.2 using unique project configurations. 
+  [Will Rowe]
+
+  Fix the truncation logic for removing a trailing backlash from the
+  physical path (file system path) in AspNetMount'ed hosts.
+  [Yussef Alkhamrichi <ylkhamrichi hotmail.com>]
+
+Changes to Apache mod_aspdotnet build 2000
+
+  Allocate the iterator used to review our AspNetMount entries from 
+  the request pool, not the configuration pool.
+  [Larry Toppi <larry.toppi citrix.com>]
+
+  Added .rc VERSIONINFO tags to query the version of the mod_aspdotnet.so
+  and Apache.Web.dll files.  [Will Rowe]
+
+  Release com objects immediately after querying for an interface,
+  before we error out that we failed to retrieve an interface.
+  [<hammet <hammett uol.com.br>]
+
+  Don't test for a specific httpd.exe or apache.exe binary name, and
+  use the correct public key token for loading the Apache.Web assembly
+  [Yussef Alkhamrichi <yalkhamrichi hotmail.com>
+
+  Original code contributed by William A. Rowe, Jr. and Covalent 
+  Technologies, Inc.

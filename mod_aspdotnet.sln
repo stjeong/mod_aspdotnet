@@ -1,0 +1,53 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.8
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mod_aspdotnet", "mod\mod_aspdotnet.vcxproj", "{B86D2326-9565-4494-B609-3E770ED14607}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Apache.Web", "Apache.Web\Apache.Web.vcxproj", "{4B4F627E-C6DE-4614-9135-306D94F8755B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "resolve_apache", "msi_dll\resolve_apache.vcxproj", "{5149E89D-79D2-4FE7-B088-4987CF385D46}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{949EB221-05A3-4A71-A39B-9ECE2577AF35}"
+	ProjectSection(SolutionItems) = preProject
+		aspnet.conf = aspnet.conf
+		CHANGES.txt = CHANGES.txt
+		License.rtf = License.rtf
+		LICENSE.txt = LICENSE.txt
+		Readme.md = Readme.md
+		README.txt = README.txt
+		STATUS.txt = STATUS.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug 2.4|Win32 = Debug 2.4|Win32
+		Release 2.4|Win32 = Release 2.4|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B86D2326-9565-4494-B609-3E770ED14607}.Debug 2.4|Win32.ActiveCfg = Debug 2.4|Win32
+		{B86D2326-9565-4494-B609-3E770ED14607}.Debug 2.4|Win32.Build.0 = Debug 2.4|Win32
+		{B86D2326-9565-4494-B609-3E770ED14607}.Debug 2.4|Win32.Deploy.0 = Debug 2.4|Win32
+		{B86D2326-9565-4494-B609-3E770ED14607}.Release 2.4|Win32.ActiveCfg = Release 2.4|Win32
+		{B86D2326-9565-4494-B609-3E770ED14607}.Release 2.4|Win32.Build.0 = Release 2.4|Win32
+		{B86D2326-9565-4494-B609-3E770ED14607}.Release 2.4|Win32.Deploy.0 = Release 2.4|Win32
+		{4B4F627E-C6DE-4614-9135-306D94F8755B}.Debug 2.4|Win32.ActiveCfg = Debug 2.4|Win32
+		{4B4F627E-C6DE-4614-9135-306D94F8755B}.Debug 2.4|Win32.Build.0 = Debug 2.4|Win32
+		{4B4F627E-C6DE-4614-9135-306D94F8755B}.Debug 2.4|Win32.Deploy.0 = Debug 2.4|Win32
+		{4B4F627E-C6DE-4614-9135-306D94F8755B}.Release 2.4|Win32.ActiveCfg = Release 2.4|Win32
+		{4B4F627E-C6DE-4614-9135-306D94F8755B}.Release 2.4|Win32.Build.0 = Release 2.4|Win32
+		{4B4F627E-C6DE-4614-9135-306D94F8755B}.Release 2.4|Win32.Deploy.0 = Release 2.4|Win32
+		{5149E89D-79D2-4FE7-B088-4987CF385D46}.Debug 2.4|Win32.ActiveCfg = Debug 2.4|Win32
+		{5149E89D-79D2-4FE7-B088-4987CF385D46}.Debug 2.4|Win32.Build.0 = Debug 2.4|Win32
+		{5149E89D-79D2-4FE7-B088-4987CF385D46}.Debug 2.4|Win32.Deploy.0 = Debug 2.4|Win32
+		{5149E89D-79D2-4FE7-B088-4987CF385D46}.Release 2.4|Win32.ActiveCfg = Release 2.4|Win32
+		{5149E89D-79D2-4FE7-B088-4987CF385D46}.Release 2.4|Win32.Build.0 = Release 2.4|Win32
+		{5149E89D-79D2-4FE7-B088-4987CF385D46}.Release 2.4|Win32.Deploy.0 = Release 2.4|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E08BB89E-DB14-4F95-9379-2D69684568ED}
+	EndGlobalSection
+EndGlobal

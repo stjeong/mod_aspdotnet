@@ -1,0 +1,271 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+  <meta name="author" content="mod-aspdotnet users" />
+  <meta name="email" content="mod-aspdotnet-users@lists.sourceforge.net" />
+  <link href="manual.css" rel="stylesheet" media="all" type="text/css" title="Main stylesheet" />
+  <link href="manual-loose-100pc.css" rel="alternate stylesheet" media="all" type="text/css" title="No Sidebar - Default font size" />
+  <link href="manual-print.css" rel="stylesheet" media="print" type="text/css" />
+  <title>Introduction to mod_aspdotnet - from mod-aspdotnet on SourceForge</title>
+ </head>
+ <body bgcolor="#ffffff" text="#000000" link="#525D76">
+<div id="page-header">
+<p class="apache">mod_aspdotnet module for Apache HTTP Server 2.x</p>
+</div>
+<!-- <p><a href="/"><img src="../images/logo_wide.gif" border="0"
+                         alt="The mod-aspdotnet Project on SourceForge" /></a></p> -->
+ <table border="0" width="100%" cellspacing="4">
+   <tr>
+    <!-- LEFT SIDE NAVIGATION -->
+    <td valign="top" nowrap="nowrap">
+           <p><b>Essentials</b></p>
+    <menu compact="compact">
+          <li><a href="http://mod-aspdotnet.sourceforge.net/">Summary</a></li>
+          <li><a href="http://www.apache.org/licenses/LICENSE-2.0">License</a></li>
+          <li><a href="http://mod-aspdotnet.sourceforge.net/mod_aspdotnet.html">Reference</a></li>
+          <li><a href="http://sourceforge.net/project/platformdownload.php?group_id=175077&sel_platform=1390">Download</a></li>
+          <li><a href="http://mod-aspdotnet.sourceforge.net/verify/">Verify</a></li>
+        </menu>
+      <p><b>Project</b></p>
+    <menu compact="compact">
+          <li><a href="http://sourceforge.net/projects/mod-aspdotnet">Project Home</a></li>
+          <li><a href="http://sourceforge.net/news/?group_id=175077">Project News</a></li>
+          <li><a href="http://sourceforge.net/mail/?group_id=175077l">Mailing Lists</a></li>
+          <li><a href="http://sourceforge.net/tracker/?group_id=175077&amp;atid=871785">Bug Reports</a></li>
+        </menu>
+    </td>      
+    <!-- RIGHT SIDE INFORMATION -->
+    <td align="left" valign="top">
+                <table border="0" cellspacing="0" cellpadding="2" width="100%">
+ <tr><td bgcolor="#525D76">
+  <font color="#ffffff" face="arial,helvetica,sanserif">
+   <a name="Server"><strong>What is the Apache HTTP Server?</strong></a>
+  </font>
+ </td></tr>
+ <tr><td>
+
+<p class="indent">The Apache HTTP Server is a robust implementation of an 
+HTTP/1.1 server which runs on Windows, various flavors of unix and other modern 
+operating systems.  It is a modular framework, which allows modules supporting 
+various features to be loaded, or not, as required by the administrator.</p>
+
+<p class="indent">The mod_aspdotnet module is provided only for the Windows 
+operating system, and this module won't work for the other operating systems.  
+See the <a href="http://mod-aspdotnet.sourceforge.net/">mod-aspdotnet project 
+page</a> for alternatives available to users of other operating systems.</p>
+
+<p class="indent">This document will introduce you to all of the key concepts 
+you might be unfamiliar with, introduce you to mod_aspdotnet and the purpose 
+it serves, and what you can accomplish with it.  This document is a work in 
+progress, feedback is welcome at the users mailing list.</p>
+
+<p class="indent">See <a href="http://sourceforge.net/projects/mod-aspdotnet"
+>mod-aspdotnet Project Pages</a> for information about mailing lists, other 
+resources and how to participate in these ongoing efforts!</p>
+
+ </td></tr>
+</table>
+           <table border="0" cellspacing="0" cellpadding="2" width="100%">
+ <tr><td bgcolor="#525D76">
+  <font color="#ffffff" face="arial,helvetica,sanserif">
+   <a name=".NET"><strong>What Is .NET?</strong></a>
+  </font>
+ </td></tr>
+ <tr><td>
+
+<p class="indent">Microsoft's marketing of .NET is a vision encompasing a wide 
+spectrum of technologies, not one specific new technology.  This leads to much 
+confusion about .NET development, and what web development under .NET really 
+entails.</p>
+
+<p class="indent">The deepest underpinning of .NET is a new program execution 
+model, the CLR (Common Language Runtime), which hosts IL (Intermediate 
+Language) code.  This model is very similar to Java's JVM running .class'es 
+compiled into Java bytecode.  Far different than the classic interpreted 
+script (such as Perl) or compiled machine code (such as C or C++), the CLR 
+enforces rules to ensure code trust, machine security and data integrity.  
+Many languages are already available for writing code to run within the CLR, 
+including C#, and Microsoft's C++.NET, VisualBasic.NET and J#.  Many third 
+party companies are bringing additional languages to the .NET managed code 
+world, there are more than 20 different languages shipping today.</p>
+
+<p class="indent">Microsoft's .NET Framework includes many core facilities, 
+packaged as language-agnostic classes that can be generally used by any .NET 
+language.  It includes the C# compiler, and the ASP.NET related classes.</p>
+
+ </td></tr>
+</table>
+           <table border="0" cellspacing="0" cellpadding="2" width="100%">
+ <tr><td bgcolor="#525D76">
+  <font color="#ffffff" face="arial,helvetica,sanserif">
+   <a name="ASP.NET"><strong>What Is ASP.NET?</strong></a>
+  </font>
+ </td></tr>
+ <tr><td>
+
+<p class="indent">ASP.NET (known inside the .NET framework as System.Web) is 
+a hosting environment for web applications that provides facilities to query 
+and collect information about the current request, prepare the response, and 
+maintain session state information.  ASP.NET simplifies the chore of building 
+web applications down to the essential task of generating and serving 
+content.</p>
+
+<p class="indent">The converse question, "are ASP.NET and ASP the same thing?", 
+deserves a resounding answer of <strong>NO</strong>.  Although in some respects 
+they offer similar facilities, they have no relation to each other.  
+mod_aspdotnet only provides the ASP.NET environment, and does nothing 
+for ASP content.  Simply put, ASP.NET has replaced ASP, and ASP runs in 
+its own environment(s), (one per scripting language) and not inside the 
+.NET framework.</p>
+
+<p class="indent">If you have ASP pages to serve, consider porting them to 
+ASP.NET.  There are many fine books and online guides to assist you.</p>
+
+ </td></tr>
+</table>
+           <table border="0" cellspacing="0" cellpadding="2" width="100%">
+ <tr><td bgcolor="#525D76">
+  <font color="#ffffff" face="arial,helvetica,sanserif">
+   <a name="mod_aspdotnet"><strong>What is mod_aspdotnet?</strong></a>
+  </font>
+ </td></tr>
+ <tr><td>
+
+<p class="indent">This is actually two modules; the first, mod_aspdotnet.so, is 
+an in-process Apache 2.0 or 2.2 module, which starts the ASP.NET engine and 
+hands off requests to the ASP.NET engine.  There is a second module compiled 
+for .NET, which is named Apache.Web.dll.  The Apache.Web.dll is loaded into 
+Microsoft's ASP.NET host environment, and dispatches request and response 
+operations back to the mod_aspdotnet.so.  This combination of managed 
+(.NET-side) and unmanaged (Apache-side) code, running in the same process as 
+the Apache 2.0 server, attains very optimal performance for serving ASP.NET 
+content.  The solution maintains tight compatibility with existing, IIS-hosted 
+ASP.NET, because the same Microsoft ASP.NET hosting environment is running 
+under either of these scenarios.</p>
+
+<p class="indent">Multiple ASP.NET virtual webs are supported by the 
+mod_aspdotnet module.  A request is directed to the asp.net handler using 
+conventional Apache configuration options, and is mapped to a specific ASP.NET 
+virtual web by matching the requested URI to the AspNetMount directives given 
+for the specific Apache virtual host, uri, and file location.  The same 
+AspNetMount can be given in multiple Apache virtual hosts.  Any given 
+AspNetMount is created only once for all Apache virtual hosts that share the 
+same AspNetMount, conserving memory and resources.</p>
+
+<p class="indent">AspNetMount and other directive changes are processed when 
+the server is restarted.  With Apache 2.0, the original Windows child process 
+continues to serve requests until a new child process is ready to process 
+requests itself.  This provides minimal interruption of service when modifying 
+the web server configuration.  The restart option begins a graceful restart 
+sequence, loading and initializing the new server while the old server finishes 
+fulfilling open requests, and there is no interruption in web services during 
+the transition from the old to the new configuration.</p>
+
+<p class="indent">This is not a module for Unix platforms.  The Mono project's 
+mod_mono provides very similar features for non-Win32 machines, with their own 
+implementation of ASP.NET for Apache httpd server.</p>
+
+ </td></tr>
+</table>
+           <table border="0" cellspacing="0" cellpadding="2" width="100%">
+ <tr><td bgcolor="#525D76">
+  <font color="#ffffff" face="arial,helvetica,sanserif">
+   <a name="Starting"><strong>Getting Started</strong></a>
+  </font>
+ </td></tr>
+ <tr><td>
+
+<p class="indent">Microsoft's .NET Framework is available as a free download 
+for Windows 2000 or 2003 Professional and Server versions, XP Professional, 
+and .NET Server platforms from 
+<a href="http://asp.net/download.aspx">http://asp.net/download.aspx</a>.
+You must minimally install the .NET Framework Resdistributable version, while 
+developers will prefer to install the .NET Framework Software Development Kit, 
+or another .NET development tool such as VisualStudio .NET.</p>
+
+<p class="indent">Once you download and install the mod_aspdotnet .msi package, 
+it will install both mod_aspdotnet.so into your Apache2/modules/ directory, and 
+the Apache.Web.dll into the Global Assembly Cache.  You then need to modify 
+your Apache2/conf/httpd.conf file to load the mod_aspdotnet.so module, and 
+declare what content you will serve.  See the <a href="mod_aspdotnet.html"
+>mod_aspdotnet</a>module documentation for the directives to add for a typical 
+scenario, or follow the Example below.</p>
+
+ </td></tr>
+</table>
+           <table border="0" cellspacing="0" cellpadding="2" width="100%">
+ <tr><td bgcolor="#525D76">
+  <font color="#ffffff" face="arial,helvetica,sanserif">
+   <a name="Example"><strong>An Example Configuration - Microsoft's IBuySpy Sample</strong></a>
+  </font>
+ </td></tr>
+ <tr><td>
+
+<p class="indent">The following configuration will support the Microsoft 
+IBuySpy sample, an illustration of a web storefront.  IBuySpy is available 
+as a free download from <a href="http://asp.net/ibuyspy/">http://asp.net/ibuyspy/</a>.  Note that 
+Microsoft SQL Server version 7.0 must be installed before installing the 
+Microsoft IBuySpy sample.  The configuration below illustrates configuration 
+for the C# flavor of the IBuySpy Store sample, installed into the default 
+installation directory:</p>
+
+  <div class="example">
+<pre>
+LoadModule aspdotnet_module modules/mod_aspdotnet.so
+
+# Use the asp.net handler for all common ASP.NET file types
+AddHandler asp.net asax ascx ashx asmx aspx axd config cs csproj \
+                   licx rem resources resx soap vb vbproj vsdisco webinfo 
+
+&lt;IfModule mod_aspdotnet.cpp&gt;
+
+    # Mount the IBuySpy C# example application
+    AspNetMount /StoreCSVS "C:/StoreCSVS/StoreCSVS"
+
+    # Map all requests for /StoreCSVS to the IBuySpy application files
+    Alias /StoreCSVS "C:/StoreCSVS/StoreCSVS"
+
+    # Allow asp.net scripts to be executed in the IBuySpy example
+    &lt;Directory "C:/StoreCSVS/StoreCSVS"&gt;
+        Options FollowSymlinks
+        AspNet Files
+        Order allow,deny
+        Allow from all
+        DirectoryIndex Default.htm Default.aspx
+    &lt;/Directory&gt;
+
+    # For all virtual ASP.NET webs, we need the aspnet_client files 
+    # to serve the client-side helper scripts.
+    AliasMatch /aspnet_client/system_web/(\d+)_(\d+)_(\d+)_(\d+)/(.*) \
+          "C:/Windows/Microsoft.NET/Framework/v$1.$2.$3/ASP.NETClientFiles/$4"
+    &lt;Directory \
+          "C:/Windows/Microsoft.NET/Framework/v*/ASP.NETClientFiles"&gt;
+        Options FollowSymlinks
+        Order allow,deny
+        Allow from all
+    &lt;/Directory&gt;
+
+&lt;/IfModule&gt;
+</pre>
+
+  </div>
+<p class="indent">Configuring the VisualBasic.NET version is very similar, simply change the 
+<code>StoreCSVS</code> directory names above, to <code>StoreVBVS</code>.</p>
+
+ </td></tr>
+</table>
+         </td>
+   </tr>
+   <!-- FOOTER -->
+   <tr><td colspan="2"><hr noshade="noshade" size="1"/></td></tr>
+   <tr><td colspan="2" align="center">
+        <font size="-1">
+         <em>Copyright &#169; 2002-2006, Covalent Technologies</em>
+        </font>
+       </td>
+   </tr>
+  </table>
+ </body>
+</html>

@@ -1,0 +1,39 @@
+#include "..\Apache.Web\Apache.Web.Version.h"
+
+1 VERSIONINFO
+ FILEVERSION APACHE_WEB_VERSION_CSV
+ PRODUCTVERSION APACHE_WEB_VERSION_CSV
+ FILEFLAGSMASK 0x3fL
+#if defined(_DEBUG)
+ FILEFLAGS 0x03L
+#else
+#if !APACHE_WEB_VER_RELEASE
+ FILEFLAGS 0x02L
+#else
+ FILEFLAGS 0x0L
+#endif
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+  BLOCK "StringFileInfo"
+  BEGIN
+    BLOCK "040904b0"
+    BEGIN
+      VALUE "Comments", "Licensed under Apache License 2.0 - the license is available at <http://www.apache.org/licenses/LICENSE-2.0.txt>. The mod-aspdotnet project is at <http://sourceforge.net/projects/mod-aspdotnet>.\0"
+      VALUE "CompanyName", "Covalent Technologies mod-aspdotnet Project\0"
+      VALUE "FileDescription", "aspdotnet_module connector module to Apache.Web for the Apache HTTP Web Server\0"
+      VALUE "FileVersion", APACHE_WEB_VERSION "\0"
+      VALUE "InternalName", "mod_aspdotnet.so\0"
+      VALUE "LegalCopyright", "Copyright © 2007 Covalent Technologies\0"
+      VALUE "OriginalFilename", "mod_aspdotnet.so\0"
+      VALUE "ProductName", "mod_aspdotnet/Apache.Web host module for Microsoft ASP.NET within the Apache HTTP Server\0"
+      VALUE "ProductVersion", APACHE_WEB_VERSION "\0"
+    END
+  END
+  BLOCK "VarFileInfo"
+  BEGIN
+    VALUE "Translation", 0x409, 1200
+  END
+END
