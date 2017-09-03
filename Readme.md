@@ -13,8 +13,7 @@ You have to install appropriate modules for your environment as follows.
 | 2.2            | [mod_aspdotnet-2.2.0.2006-setup-r2.msi](http://sourceforge.net/project/platformdownload.php?group_id=175077) | CLR 2 |
 | 2.4            | Release at this repo. (Or build for yourself)                         | CLR 4 |
 
-Which means this version only support .NET 4.0 (or later) within Apache 2.4
-
+, which means this version only support ASP.NET within Apache 2.4 in cases of .NET 4.0 or later installation. If windows contains .NET 2.0 only, it won't work.
 
 How to install
 ================================
@@ -68,7 +67,7 @@ Change Log
 
 2.4 - Sep 3, 2017
 
-* Initial checked-in
+* Initial checked-in (For Koreans, read [this article](http://www.sysnet.pe.kr/2/0/11291))
 
 
 Reqeuests or Contributing to Repository
